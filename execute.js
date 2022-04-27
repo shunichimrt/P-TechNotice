@@ -1,15 +1,16 @@
 /**
- * zennプログラム実行
+ * qiitaプログラム実行
  * @return APIリクエストのデータ
  */
 function executeQiitaPostman() {
   var posts = getQiitaPosts();
   if (posts === "error") {
+    console.log("eQ");
     return;
   }
 
   pasteQiitaToSS(posts);
-  postQiita.sort(3, false);
+  targetShtQiita.sort(3, false);
   broadcastQiita();
 }
 
@@ -20,11 +21,12 @@ function executeQiitaPostman() {
 function executeZennPostman() {
   var posts = getZennPosts();
   if (posts === "error") {
+    console.log("eZ");
     return;
   }
 
   pasteZennToSS(posts);
-  postQiita.sort(2, false);
+  targetShtZenn.sort(2, false);
   broadcastZenn();
 }
 
@@ -67,7 +69,7 @@ function getZennPosts() {
  */
 function pasteQiitaToSS(posts) {
   var insertPosts = [];
-  for (var i = 1; i < posts.length; i++) {
+  for (var i = 1; i < 10; i++) {
     insertPosts.push([
       posts[i]["title"],
       posts[i]["url"],
@@ -75,13 +77,13 @@ function pasteQiitaToSS(posts) {
     ]);
   }
 
-  targetShtQiita.getRange(1, 1, insertPosts.length, 3).clear();
-  targetShtQiita.getRange(1, 1, insertPosts.length, 3).setValues(insertPosts);
+  targetShtQiita.getRange(2, 1, insertPosts.length, 3).clear();
+  targetShtQiita.getRange(2, 1, insertPosts.length, 3).setValues(insertPosts);
   targetShtQiita
-    .getRange(1, 1, insertPosts.length, 3)
+    .getRange(2, 1, insertPosts.length, 3)
     .setHorizontalAlignment("left");
   targetShtQiita
-    .getRange(1, 1, insertPosts.length, 3)
+    .getRange(2, 1, insertPosts.length, 3)
     .setVerticalAlignment("middle");
 }
 
@@ -91,16 +93,16 @@ function pasteQiitaToSS(posts) {
  */
 function pasteZennToSS(posts) {
   var insertPosts = [];
-  for (var i = 1; i < posts.length; i++) {
+  for (var i = 1; i < 10; i++) {
     insertPosts.push([posts[i]["title"], posts[i]["likedCount"]]);
   }
 
-  targetShtZenn.getRange(1, 1, insertPosts.length, 2).clear();
-  targetShtZenn.getRange(1, 1, insertPosts.length, 2).setValues(insertPosts);
+  targetShtZenn.getRange(2, 1, insertPosts.length, 2).clear();
+  targetShtZenn.getRange(2, 1, insertPosts.length, 2).setValues(insertPosts);
   targetShtZenn
-    .getRange(1, 1, insertPosts.length, 2)
+    .getRange(2, 1, insertPosts.length, 2)
     .setHorizontalAlignment("left");
   targetShtZenn
-    .getRange(1, 1, insertPosts.length, 2)
+    .getRange(2, 1, insertPosts.length, 2)
     .setVerticalAlignment("middle");
 }

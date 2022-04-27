@@ -8,7 +8,7 @@ var SPREADSHEET_ID =
 var SPREADSHEET_QIITA =
   PropertiesService.getScriptProperties().getProperty("SPREADSHEET_QIITA");
 var SPREADSHEET_ZENN =
-  PropertiesService.getScriptProperties().getProperty("SPREADSHEET_Zenn");
+  PropertiesService.getScriptProperties().getProperty("SPREADSHEET_ZENN");
 var targetShtQiita =
   SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SPREADSHEET_QIITA);
 var targetShtZenn =
