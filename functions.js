@@ -77,14 +77,10 @@ function pasteQiitaToSS(posts) {
     ]);
   }
 
-  targetShtQiita.getRange(2, 1, insertPosts.length, 3).clear();
+  targetShtQiita.getRange(2, 1, 10, 3).clear();
   targetShtQiita.getRange(2, 1, insertPosts.length, 3).setValues(insertPosts);
-  targetShtQiita
-    .getRange(2, 1, insertPosts.length, 3)
-    .setHorizontalAlignment("left");
-  targetShtQiita
-    .getRange(2, 1, insertPosts.length, 3)
-    .setVerticalAlignment("middle");
+  targetShtQiita.getRange(2, 1, 10, 3).setHorizontalAlignment("left");
+  targetShtQiita.getRange(2, 1, 10, 3).setVerticalAlignment("middle");
 }
 
 /**
@@ -97,12 +93,8 @@ function pasteZennToSS(posts) {
     insertPosts.push([posts[i]["title"], posts[i]["likedCount"]]);
   }
 
-  targetShtZenn.getRange(2, 1, insertPosts.length, 2).clear();
+  targetShtZenn.getRange(2, 1, 10, 2).clear();
   targetShtZenn.getRange(2, 1, insertPosts.length, 2).setValues(insertPosts);
-  targetShtZenn
-    .getRange(2, 1, insertPosts.length, 2)
-    .setHorizontalAlignment("left");
-  targetShtZenn
-    .getRange(2, 1, insertPosts.length, 2)
-    .setVerticalAlignment("middle");
+  targetShtZenn.getRange(2, 1, 10, 2).setHorizontalAlignment("left");
+  targetShtZenn.getRange(2, 1, 10, 2).setVerticalAlignment("middle");
 }
