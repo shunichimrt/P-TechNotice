@@ -77,6 +77,12 @@ function pasteQiitaToSS(posts) {
 
   targetShtQiita.getRange(1, 1, insertPosts.length, 3).clear();
   targetShtQiita.getRange(1, 1, insertPosts.length, 3).setValues(insertPosts);
+  targetShtQiita
+    .getRange(1, 1, insertPosts.length, 3)
+    .setHorizontalAlignment("left");
+  targetShtQiita
+    .getRange(1, 1, insertPosts.length, 3)
+    .setVerticalAlignment("middle");
 }
 
 /**
@@ -91,4 +97,10 @@ function pasteZennToSS(posts) {
 
   targetShtZenn.getRange(1, 1, insertPosts.length, 2).clear();
   targetShtZenn.getRange(1, 1, insertPosts.length, 2).setValues(insertPosts);
+  targetShtZenn
+    .getRange(1, 1, insertPosts.length, 2)
+    .setHorizontalAlignment("left");
+  targetShtZenn
+    .getRange(1, 1, insertPosts.length, 2)
+    .setVerticalAlignment("middle");
 }
