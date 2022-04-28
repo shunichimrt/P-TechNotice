@@ -4,7 +4,7 @@
  */
 function broadcastQiita() {
   let message = "今日のQiita５選";
-  var postQiita = targetShtQiita.getRange(1, 1, 5, 3).getValues();
+  var postQiita = targetShtQiita.getRange(2, 1, 5, 3).getValues();
   for (var i = 0; i < postQiita.length; i++) {
     message =
       message +
@@ -40,7 +40,7 @@ function broadcastQiita() {
  */
 function broadcastZenn() {
   let message = "今日のZenn５選";
-  var postZenn = targetShtZenn.getRange(1, 1, 5, 3).getValues();
+  var postZenn = targetShtZenn.getRange(2, 1, 5, 3).getValues();
   for (var i = 0; i < postZenn.length; i++) {
     message =
       message + "\n\n" + postZenn[i][0] + "\nいいね数:　" + postZenn[i][1] + "";
